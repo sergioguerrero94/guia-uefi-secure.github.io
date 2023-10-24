@@ -1,0 +1,141 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Guía de protección de BIOS/UEFI</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="uefi_1.1"
+                  title="Guía de protección de BIOS/UEFI"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Introducción" duration="22">
+        <p>La BIOS/UEFI se trata del software que trae la placa base dentro de un chip. Desde la BIOS, se puede cambiar la prioridad de arranque, hacer overclock y establecer numerosas configuraciones, entre ellas varias configuraciones de seguridad. En esta guía de protección de la BIOS/UEFI se van a recoger alguna de estas configuraciones.</p>
+<p>Las configuraciones a detallar en las siguientes secciones, estan explicadas sobre la versión 2.21.1278 de 2022 de AMI.</p>
+<p class="image-container"><img alt="UEFI" src="img\\d32dac8985858bfe.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de Usuario" duration="18">
+        <p>Una de las primeras configuraciones que podemos llevar a cabo es colocar una contraseña para el usuario, esta contraseña proporciona una capa de seguridad para que los usuarios eviten el acceso no autorizado a usuarios con acceso a la máquina donde se configure.</p>
+<p>En esta misma ventana también se específican las restricciones al momento de crear una contraseña.</p>
+<ol type="1">
+<li>Primero deberemos entrar en la BIOS, para ello deberemos reiniciar el ordenador y dependiendo de la placa base, pulsar F2 o SUPR. Deberemos pulsar en esta BIOS F7 para entrar en el modo avanzado o clicar sobre la opción.</li>
+</ol>
+<p class="image-container"><img alt="menu" src="img\\d32dac8985858bfe.png"></p>
+<ol type="1" start="2">
+<li>Tras haber clicado la opción o pulsado la tecla mencionada anteriormente, deberemos hacer scroll hasta poder ver la sección de seguridad y clicar sobre ella.</li>
+</ol>
+<p class="image-container"><img alt="security" src="img\\1c0ab80ca6d946ac.png"></p>
+<ol type="1" start="3">
+<li>Una vez dentro, veremos una pequeña explicación de que hace la contraseña de usuario y la contraseña de administrador. Clicamos sobre la opción de contraseña de usuario.</li>
+</ol>
+<p class="image-container"><img alt="user_pass" src="img\\500a02bd2bcec647.png"></p>
+<ol type="1" start="4">
+<li>Al haber clicado, nos aparecerá una pequeña ventana para que añadamos la contraseña que queramos definir y repetirla. Una vez definida, simplemente tendremos que guardar la configuración y salir, pero en nuestro caso haremos más configuraciones.</li>
+</ol>
+<p class="image-container"><img alt="pass" src="img\\f2f47e051189abf6.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de administrador" duration="15">
+        <p>En esta sección indicaremos como definir una contraseña de usuario que, como vemos en los siguientes pasos, no difiere en nada más que la opción donde clicar de la definición de la contraseña para usuario.</p>
+<ol type="1">
+<li>Si hemos configurado la contraseña de usuario, simplemente deberemos clicar en la misma ventana en contraseña de administrador y si no lo hemos hecho, simplmente deberemos seguir los pasos de la sección anterior pero clicando en contraseña de administrador.</li>
+</ol>
+<p class="image-container"><img alt="admin_pass" src="img\\c6433036d71fa0ef.png"></p>
+<ol type="1" start="2">
+<li>Como en la sección de contraseña de usuario, nos aparecerá una ventana para que definamos la contraseña del administrador.</li>
+</ol>
+<p class="image-container"><img alt="pass2" src="img\\e661d1b06df3d9c9.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Arranques externos" duration="11">
+        <p>En este apartado se llevará a cabo la desactivación de los dispositivos desde los que se puede arrancar el sistema.</p>
+<ol type="1">
+<li>Lo primero que deberemos hacer es irnos al menú horizontal y buscar el apartado &#34;arrancar&#34;. Clicamos en él para que nos aparezca una serie de configuraciones.</li>
+</ol>
+<p class="image-container"><img alt="arrancar" src="img\\285b263e9c99b30b.png"></p>
+<ol type="1" start="2">
+<li>Una vez dentro de la pestaña de arrancar, iremos a la sección donde podemos cambiar el orden de arranque. Clicamos en las opciones de arranque que no sean la que arranca desde Windows y la deshabilitamos.</li>
+</ol>
+<p class="image-container"><img alt="deshabilitar" src="img\\26c0a4db1b4de45.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Orden de arranque" duration="8">
+        <ol type="1">
+<li>Si no hemos deshabilitado los arranques externos, podremos seleccionar el orden de arranque que queremos. Simplemente deberemos clicar en la primera opción dentro de la sección de orden de arranque.</li>
+</ol>
+<p class="image-container"><img alt="orden_opcion" src="img\\92a1838b7c73bf0f.png"></p>
+<p>Por ejemplo, podemos seleccionar arranque desde el USB que está conectado al PC o simplemente dejar que arranque desde el disco duro.</p>
+<p class="image-container"><img alt="usb_arranque" src="img\\b64edb83b11abef1.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Secure Boot" duration="6">
+        <p>Secure Boot es una configuración que podemos añadir a nuestra BIOS para que no se pueda ejecutar código malicioso en el arranque.</p>
+<ol type="1">
+<li>Vamos a la pestaña arrancar y clicamos sobre la sección de menú de arranque seguro.</li>
+</ol>
+<p class="image-container"><img alt="menu_secure_boot" src="img\\bb9002aaf10e10c4.png"></p>
+<ol type="1" start="2">
+<li>Una vez dentro, dejamos el tipo de arranque en modo UEFI de Windows y clicamos sobre la opción para configurar el modo de secure boot. Si lo dejamos en estándar, solo usará las claves y configuraciones proporcionadas por el fabricante del Hardware y del Sistema Operativo. Si seleccionamos la opción de custom, podremos definir nuestras propias claves de firma digital.</li>
+</ol>
+<p class="image-container"><img alt="secure_boot" src="img\\8d713d85b670f30.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Desactivar USB" duration="3">
+        <p>Hay una opción que tiene mi placa para desactivar cada puerto USB de la misma desde la BIOS. Esto debe ser activado en caso de que nunca vaya a ser conectado dispositivos USB a nuestra máquina.</p>
+<ol type="1">
+<li>Para llevar a cabo esto, deberemos clicar en la pestaña de opciones avanzadas que se eucnetra en el menú horizontal en la parte superior e ir a la opción USB Configuration.</li>
+</ol>
+<p class="image-container"><img alt="opciones_avanzadas" src="img\\3aeb6115fe2b092f.png"></p>
+<ol type="1" start="2">
+<li>Una vez dentro, nos aparecerá una serie de opciones pero solo nos interesará y clicaremos sobre USB Single Port Control.</li>
+</ol>
+<p class="image-container"><img alt="usb_menu" src="img\\9cd63f571d9a0635.png"></p>
+<ol type="1" start="3">
+<li>Nos aparecerá una lista de los puertos USB de nuestra máquina y podremos ir desactivándolos uno a uno.</li>
+</ol>
+<p class="image-container"><img alt="desactivar_usb" src="img\\3c6b353d94c1571a.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
